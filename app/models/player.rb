@@ -1,4 +1,6 @@
-class Player
+class Player < ActiveRecord::Base
+    has_many :contracts
+    has_many :teams, through: :contracts
 
     def player_name(url)
         player = GetRequester.new(url)
@@ -6,5 +8,4 @@ class Player
         player_parsed["player_info"]["queryResults"]["row"]["name_display_first_last"]
     end
 
-    
 end
