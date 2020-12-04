@@ -31,4 +31,13 @@ class Team < ActiveRecord::Base
         self.team_info(team2)
     end
 
+    def self.display_players(team)
+        team_id = self.get_team(team)
+        team_players = GetRequester.new("http://lookup-service-prod.mlb.com/json/named.roster_40.bam?team_id='#{team_id}'")
+        team_players_parsed = team_players.parse_json
+        new_team_parsed = team_players_parsed["roster_40"]["queryResults"]["row"]
+        display_teams = new_team_parsed.each{|team| puts team["name_display_first_last"]}
+        nil
+    end
+
 end
