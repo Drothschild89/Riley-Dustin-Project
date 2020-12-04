@@ -29,5 +29,17 @@ class Team < ActiveRecord::Base
         self.find_or_create_by(name: name, city: city, venue: venue)
     end
 
+    def self.team_info(team)
+        Team.add_team(team)
+        find_data = Team.find_by(name: team)
+        puts find_data.name
+        puts find_data.city
+        puts find_data.venue
+    end
+
+    def self.compare_teams(team1, team2)
+        self.team_info(team1)
+        self.team_info(team2)
+    end
 
 end
