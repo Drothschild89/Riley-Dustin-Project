@@ -47,4 +47,16 @@ class Player < ActiveRecord::Base
         end
     end
 
+    def self.find_pitching_era(name)
+        self.add_player(name)
+        if Player.find_by(name: name).position == 'P'
+            player_id = self.get_player(name)
+            player = GetRequester.new("http://lookup-service-prod.mlb.com/json/named.sport_career_pitching.bam?league_list_id='mlb'&game_type='R'&player_id='#{player_id}'")
+            player_parsed = player.parse_json
+            puts player_parsed["sport_career_pitching"]["queryResults"]["row"]["era"]
+        else
+            puts "Only pitchers have an ERA, please insert a pitcher"
+        end
+    end
+
 end
