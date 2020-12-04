@@ -22,10 +22,8 @@ class Player < ActiveRecord::Base
         position = new_player_parsed["search_player_all"]["queryResults"]["row"]["position"]
         birth_country = new_player_parsed["search_player_all"]["queryResults"]["row"]["birth_country"]
         self.find_or_create_by(name: name, position: position, birth_country: birth_country)
+        add_team = Team.add_team(new_player_parsed["search_player_all"]["queryResults"]["row"]["team_full"])
+        new_contract = Contract.new_contract(self.where(["name = ?", first_name + last_name]), add_team)
     end
-
-
-
-
 
 end
