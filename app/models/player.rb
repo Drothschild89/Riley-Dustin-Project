@@ -10,16 +10,21 @@ class Player < ActiveRecord::Base
     end
 
     def self.add_player(name)
-        name_split = name.split(" ")
-        new_player = GetRequester.new("http://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code=%27mlb%27&active_sw=%27Y%27&name_part=%27#{name_split[0]}_#{name_split[1]}%25%27")
-        new_player_parsed = new_player.parse_json
-        player = new_player_parsed["search_player_all"]["queryResults"]["row"]
-        name = player["name_display_first_last"]
-        position = player["position"]
-        birth_country = player["birth_country"]
-        self.find_or_create_by(name: name, position: position, birth_country: birth_country)
-        add_team = Team.add_team(player["team_full"])
-        new_contract = Contract.new_contract(Player.find_by(name: name).id, Team.find_by(name: player["team_full"]).id)
+            name_split = name.split(" ")
+            new_player = GetRequester.new("http://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code=%27mlb%27&active_sw=%27Y%27&name_part=%27#{name_split[0]}_#{name_split[1]}%25%27")
+            new_player_parsed = new_player.parse_json
+            player = new_player_parsed["search_player_all"]["queryResults"]["row"]
+            if !player
+                puts "This player doesn't seem to exist, please try again"
+                exit
+            else 
+            name = player["name_display_first_last"]
+            position = player["position"]
+            birth_country = player["birth_country"]
+            self.find_or_create_by(name: name, position: position, birth_country: birth_country)
+            add_team = Team.add_team(player["team_full"])
+            new_contract = Contract.new_contract(Player.find_by(name: name).id, Team.find_by(name: player["team_full"]).id)
+        end
     end
 
     def self.player_stats(name)

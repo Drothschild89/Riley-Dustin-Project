@@ -5,13 +5,23 @@ class Team < ActiveRecord::Base
    def self.get_team(team_name)
         team = GetRequester.new("http://lookup-service-prod.mlb.com/json/named.team_all_season.bam?sport_code='mlb'&all_star_sw='N'&sort_order=name_asc&season='2017'")
         team_parsed = team.parse_json
-        team_parsed["team_all_season"]["queryResults"]["row"].find{|club| club["name_display_full"] == team_name}["team_id"]
+        final_team_parsed = team_parsed["team_all_season"]["queryResults"]["row"].find{|club| club["name_display_full"] == team_name}
+        #binding.pry
+        if !final_team_parsed
+            puts "This team doesn't seem to exist, please try again"
+            exit
+        end
+        final_team_parsed["team_id"]
     end
 
     def self.add_team(team_name)
         new_team = GetRequester.new("http://lookup-service-prod.mlb.com/json/named.team_all_season.bam?sport_code='mlb'&all_star_sw='N'&sort_order=name_asc&season='2017'")
         new_team_parsed = new_team.parse_json
         extra_new_team = new_team_parsed["team_all_season"]["queryResults"]["row"].find{|club| club["name_display_full"] == team_name}
+        if !extra_new_team
+            puts "This team doesn't seem to exist, please try again"
+            exit
+        end
         name = extra_new_team["name_display_full"]
         city = extra_new_team["city"]
         venue = extra_new_team["venue_name"]
