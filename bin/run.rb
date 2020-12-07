@@ -3,10 +3,10 @@ require_relative '../config/environment'
 run = true
 
 while run == true do 
-    puts "Welcome, here is a list of commands that you can run: 'Player stats', 'Compare players', 'Batting average', 'Pitching ERA', 'Delete player', 'Team info', 'Compare teams', 'Display team players', 'Delete team', 'exit'"
+    puts "Welcome, here is a list of commands that you can run: 'Player info', 'Compare players', 'Batting average', 'Pitching ERA', 'Delete player', 'Team info', 'Compare teams', 'Display team players', 'Delete team', 'exit'"
     input = gets.chomp
 
-    if input == "Player stats"
+    if input == "Player info"
         puts "Player Name"
         player_name = gets.chomp
         Player.player_info(player_name)

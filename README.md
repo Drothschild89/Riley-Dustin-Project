@@ -19,21 +19,20 @@ The MLB stats lookup uses an API (Application Programming Interface) to retrieve
  5. Follow prompts in console
  
  How To Use:
-  Player Class - 
-   Player.player_info("Player name here") to retrieve a player's name, position, and birth country
-   Player.compare_players("Player name 1", "Player name 2") to compare two different players' information
-   Player.find_batting_average("Player name") to check a batter's batting average
-   Player.find_pitching_era("Player name) to check a pitcher's earned runs average
-   Player.delete_player("Player name") to delete a specific player from the local database
-
-  Team Class - 
-    Team.team_info("Team name here") to retrive a team's name, city, and venue
-    Team.compare_teams("Team name 1", "Team name 2") to compare two different teams' information
-    Team.display_players("Team name here") to display all players on a specific team in 2017
-    Team.delete_team("Team name here") to delete a specific team from the local database
+  After typing ruby bin/run.rb type in one of the following
+    -'Player info' to see information on a player
+    -'Compare players' to compare two players' information
+    -'Batting average' to see a batter's batting average
+    -'Pitching ERA' to see a pitcher's earned runs average
+    -'Delete player' to delete a player from the local database
+    -'Team info' to see information on a team
+    -'Compare teams' to compare two teams' information
+    -'Display team players' to display all players on a team in 2017
+    -'Delete team' to delete a team from the local database
+    -'exit' to exit out of the program
 
   Contributers:
-    This applicationw as created by Riley Iverson of Seattle, Washington and Dustin Rothschild of San Jose, California
+    This application was created by Riley Iverson of Seattle, Washington and Dustin Rothschild of San Jose, California
 
   Acknowledgements: 
     We would like to acknowledge the API used "MLB Data API" found at: https://appac.github.io/mlb-data-api-docs/#stats-data-career-hitting-stats-get
