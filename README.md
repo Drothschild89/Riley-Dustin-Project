@@ -15,7 +15,8 @@ The MLB stats lookup uses an API (Application Programming Interface) to retrieve
  1. git clone https://github.com/Drothschild89/Riley-Dustin-Project.git
  2. In console type: bundle install
  3. In console type: rake db:migrate
- 4. To test methods type: rake console
+ 4. In console type: ruby bin/run.rb
+ 5. Follow prompts in console
  
  How To Use:
   Player Class - 
