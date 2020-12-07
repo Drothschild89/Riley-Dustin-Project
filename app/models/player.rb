@@ -30,7 +30,7 @@ class Player < ActiveRecord::Base
         end
     end
 
-    def self.player_stats(name)
+    def self.player_info(name)
         Player.add_player(name)
         find_data = Player.find_by(name: name)
 
@@ -40,8 +40,8 @@ class Player < ActiveRecord::Base
     end
 
     def self.compare_players(player1, player2)
-        self.player_stats(player1)
-        self.player_stats(player2)
+        self.player_info(player1)
+        self.player_info(player2)
     end
 
     def self.find_batting_average(name)
