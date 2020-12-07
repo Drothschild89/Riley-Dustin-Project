@@ -6,7 +6,6 @@ class Team < ActiveRecord::Base
         team = GetRequester.new("http://lookup-service-prod.mlb.com/json/named.team_all_season.bam?sport_code='mlb'&all_star_sw='N'&sort_order=name_asc&season='2017'")
         team_parsed = team.parse_json
         final_team_parsed = team_parsed["team_all_season"]["queryResults"]["row"].find{|club| club["name_display_full"] == team_name}
-        #binding.pry
         if !final_team_parsed
             puts "This team doesn't seem to exist, please try again"
             exit
@@ -46,8 +45,14 @@ class Team < ActiveRecord::Base
         team_players = GetRequester.new("http://lookup-service-prod.mlb.com/json/named.roster_40.bam?team_id='#{team_id}'")
         team_players_parsed = team_players.parse_json
         new_team_parsed = team_players_parsed["roster_40"]["queryResults"]["row"]
+        puts "All the players for #{team}:"
         display_teams = new_team_parsed.each{|team| puts team["name_display_first_last"]}
         nil
+    end
+
+    def self.delete_team(name)
+        Team.delete(Team.find_by(name: name).id)
+        puts "#{name} deleted from table"
     end
 
 end
