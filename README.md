@@ -4,7 +4,7 @@
 
 Video demonstration: https://youtu.be/kz5A2_9e84Q
  
- Prerequisites: 
+ <h3>Prerequisites: </h3>
  <p>This application is using Ruby v.2.6.1</p>
  <p>This application is using the following Gemfiles:</p>
  <ul>
