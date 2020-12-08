@@ -13,7 +13,7 @@ Video demonstration: https://youtu.be/kz5A2_9e84Q
   <li>"require_all"</li>
   <li>"rake"</li>
   <li>"pry"</li>
- <ul>
+ </ul>
  
  <h3>Installation:</h3>
  <ol>
