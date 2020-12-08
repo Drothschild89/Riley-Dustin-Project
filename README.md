@@ -41,8 +41,11 @@ Video demonstration: https://youtu.be/kz5A2_9e84Q
 
  <h4>Contributers:</h4>
  <p>This application was created by: 
- Riley Iverson of Seattle, Washington - rmiverson99@gmail.com
- Dustin Rothschild of San Jose, California - Drothschild89@gmail.com</p>
+ <ul>
+  <li>Riley Iverson of Seattle, Washington - rmiverson99@gmail.com</li>
+  <li>Dustin Rothschild of San Jose, California - Drothschild89@gmail.com</li>
+  </ul>
+  </p>
 
   <h4>Acknowledgements:</h4
   <p>We would like to acknowledge the API used "MLB Data API" found at: https://appac.github.io/mlb-data-api-docs/#stats-data-career-hitting-stats-get</p>
