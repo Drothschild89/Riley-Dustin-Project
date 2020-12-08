@@ -34,7 +34,9 @@ Video demonstration: https://youtu.be/kz5A2_9e84Q
     *'exit' to exit out of the program
 
   Contributers:
-    This application was created by Riley Iverson of Seattle, Washington and Dustin Rothschild of San Jose, California
+    This application was created by:
+    Riley Iverson of Seattle, Washington - rmiverson99@gmail.com
+    Dustin Rothschild of San Jose, California - Drothschild89@gmail.com
 
   Acknowledgements: 
     We would like to acknowledge the API used "MLB Data API" found at: https://appac.github.io/mlb-data-api-docs/#stats-data-career-hitting-stats-get
