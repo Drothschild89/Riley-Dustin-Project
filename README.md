@@ -7,11 +7,11 @@ Video demonstration: https://youtu.be/kz5A2_9e84Q
  Prerequisites: 
  This application is using Ruby v.2.6.1
  This application is using the following Gemfiles:
- "sinatra-activerecord"
- "sqlite3"
- "require_all"
- "rake"
- "pry"
+ *"sinatra-activerecord"
+ *"sqlite3"
+ *"require_all"
+ *"rake"
+ *"pry"
  
  Installation:
  1. git clone https://github.com/Drothschild89/Riley-Dustin-Project.git
@@ -22,16 +22,16 @@ Video demonstration: https://youtu.be/kz5A2_9e84Q
  
  How To Use:
   After typing ruby bin/run.rb type in one of the following
-    -'Player info' to see information on a player
-    -'Compare players' to compare two players' information
-    -'Batting average' to see a batter's batting average
-    -'Pitching ERA' to see a pitcher's earned runs average
-    -'Delete player' to delete a player from the local database
-    -'Team info' to see information on a team
-    -'Compare teams' to compare two teams' information
-    -'Display team players' to display all players on a team in 2017
-    -'Delete team' to delete a team from the local database
-    -'exit' to exit out of the program
+    *'Player info' to see information on a player
+    *'Compare players' to compare two players' information
+    *'Batting average' to see a batter's batting average
+    *'Pitching ERA' to see a pitcher's earned runs average
+    *'Delete player' to delete a player from the local database
+    *'Team info' to see information on a team
+    *'Compare teams' to compare two teams' information
+    *'Display team players' to display all players on a team in 2017
+    *'Delete team' to delete a team from the local database
+    *'exit' to exit out of the program
 
   Contributers:
     This application was created by Riley Iverson of Seattle, Washington and Dustin Rothschild of San Jose, California
